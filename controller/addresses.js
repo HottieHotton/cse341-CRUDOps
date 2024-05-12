@@ -62,7 +62,7 @@ const updateAddress = async (req, res) => {
 const deleteAddress = async (req, res) => {
   const AddressID = req.params.id;
   try {
-    const response = await Address.findOneAndDelete(AddressID);
+    const response = await Address.findByIdAndDelete(AddressID);
     res.status(200).json("Address Deleted");
   } catch (err) {
     res

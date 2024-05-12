@@ -1,26 +1,26 @@
 ##Contact Endpoints
 
-GET https://cse341-contacts-t3nz.onrender.com/ HTTP/1.1
+GET https://cse341-crudops.onrender.com/ HTTP/1.1
 ###
 GET http://localhost:3000/ HTTP/1.1
 ###
 
 ##GET all
-GET https://cse341-contacts-t3nz.onrender.com/contacts HTTP/1.1
+GET https://cse341-crudops.onrender.com/contact HTTP/1.1
 ###
-GET http://localhost:3000/contacts HTTP/1.1
+GET http://localhost:3000/contact HTTP/1.1
 ###
 
 ##GET Single
-GET https://cse341-contacts-t3nz.onrender.com/contacts/66285c77e05dadece0f8ef61 HTTP/1.1
+GET https://cse341-crudops.onrender.com/contact/66285c77e05dadece0f8ef61 HTTP/1.1
 ###
-GET http://localhost:3000/contacts/66285c77e05dadece0f8ef61 HTTP/1.1
+GET http://localhost:3000/contact/66285c77e05dadece0f8ef61 HTTP/1.1
 ###
 
 ##GET filter
-GET https://cse341-contacts-t3nz.onrender.com/contacts/gender/m HTTP/1.1
+GET https://cse341-crudops.onrender.com/contact/gender/m HTTP/1.1
 ###
-GET http://localhost:3000/contacts/gender/m HTTP/1.1
+GET http://localhost:3000/contact/gender/m HTTP/1.1
 ###
 
 ###
@@ -55,4 +55,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/contact/664004e4319aa27447c18f14 HTTP/1.1
+DELETE http://localhost:3000/contact/66401c53e46a8b887d9ef82f HTTP/1.1
+
+###
+DELETE https://cse341-crudops.onrender.com/contact/66401c53e46a8b887d9ef82f HTTP/1.1

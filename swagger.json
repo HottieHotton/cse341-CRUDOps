@@ -295,34 +295,29 @@
             "schema": {
               "type": "object",
               "properties": {
-                "address": {
-                  "type": "object",
-                  "properties": {
-                    "street1": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "street2": {
-                      "type": "string",
-                      "example": "optional field"
-                    },
-                    "city": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "state": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "country": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "zip": {
-                      "type": "string",
-                      "example": ""
-                    }
-                  }
+                "street1": {
+                  "type": "string",
+                  "example": ""
+                },
+                "street2": {
+                  "type": "string",
+                  "example": "optional field"
+                },
+                "city": {
+                  "type": "string",
+                  "example": ""
+                },
+                "state": {
+                  "type": "string",
+                  "example": ""
+                },
+                "country": {
+                  "type": "string",
+                  "example": ""
+                },
+                "zip": {
+                  "type": "string",
+                  "example": ""
                 }
               }
             }
@@ -376,34 +371,29 @@
             "schema": {
               "type": "object",
               "properties": {
-                "address": {
-                  "type": "object",
-                  "properties": {
-                    "street1": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "street2": {
-                      "type": "string",
-                      "example": "optional field"
-                    },
-                    "city": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "state": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "country": {
-                      "type": "string",
-                      "example": ""
-                    },
-                    "zip": {
-                      "type": "string",
-                      "example": ""
-                    }
-                  }
+                "street1": {
+                  "type": "string",
+                  "example": ""
+                },
+                "street2": {
+                  "type": "string",
+                  "example": "optional field"
+                },
+                "city": {
+                  "type": "string",
+                  "example": ""
+                },
+                "state": {
+                  "type": "string",
+                  "example": ""
+                },
+                "country": {
+                  "type": "string",
+                  "example": ""
+                },
+                "zip": {
+                  "type": "string",
+                  "example": ""
                 }
               }
             }

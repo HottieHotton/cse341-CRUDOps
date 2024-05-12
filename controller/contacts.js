@@ -52,9 +52,20 @@ const getID = async (req, res) => {
 const createContact = async (req, res) => {
   try {
     const { contact, address } = req.body;
-    const newAddress = await Address.create(address);
-    contact.address = newAddress._id;
-    const response = await Contact.create(contact);
+    let newAddress;
+    let response;
+
+    try {
+      newAddress = await Address.create(address);
+      contact.address = newAddress._id;
+      response = await Contact.create(contact);
+    } catch (error) {
+      // Rollback if issue with address comes up
+      if (newAddress) {
+        await Address.findByIdAndDelete(newAddress._id);
+      }
+      throw error;
+    }
     const populateContact = await Contact.findById(response._id)
       .populate("address")
       .exec();
@@ -95,8 +106,8 @@ const deleteContact = async (req, res) => {
     const contactID = req.params.id;
     const getAddress = await Contact.findById(contactID);
     const addressID = getAddress.address.toString();
-    const deleteContact = await Contact.findOneAndDelete(contactID);
-    const deleteAddress = await Address.findOneAndDelete(addressID);
+    const deletedContact = await Contact.findByIdAndDelete(contactID);
+    const deletedAddress = await Address.findByIdAndDelete(addressID);
     res.status(200).json("Contact and Address deleted");
   } catch (err) {
     res
