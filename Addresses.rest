@@ -1,0 +1,46 @@
+##Address Endpoints
+
+GET https://cse341-crudops.onrender.com/ HTTP/1.1
+###
+GET http://localhost:3000/ HTTP/1.1
+###
+
+##GET all
+GET https://cse341-crudops.onrender.com/addresses HTTP/1.1
+###
+GET http://localhost:3000/addresses HTTP/1.1
+###
+
+##GET Single
+GET https://cse341-crudops.onrender.com/addresses/ HTTP/1.1
+###
+GET http://localhost:3000/addresses/ HTTP/1.1
+###
+
+###
+POST http://localhost:3000/addresses HTTP/1.1
+content-type: application/json
+
+{
+        "street1": "123 Main St",
+        "city": "Townville",
+        "state": "Stateville",
+        "country": "US",
+        "zip": "12345"
+}
+
+###
+PUT http://localhost:3000/addresses/6640029983b39bf106a38b83 HTTP/1.1
+content-type: application/json
+
+{
+        "street1": "123 Main St",
+        "city": "Cityville",
+        "state": "Stateville",
+        "country": "US",
+        "zip": "12345"
+  }
+
+
+###
+DELETE http://localhost:3000/addresses/6640029983b39bf106a38b83 HTTP/1.1
