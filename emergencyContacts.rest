@@ -1,0 +1,56 @@
+GET http://localhost:3000/contact HTTP/1.1
+
+
+## 6640029983b39bf106a38b83
+###
+PUT http://localhost:3000/contact/66285c39e05dadece0f8ef60 HTTP/1.1
+content-type: application/json
+
+{
+    "contact": {
+        "address": "6640029983b39bf106a38b83"
+    }
+}
+
+###
+POST http://localhost:3000/contact HTTP/1.1
+content-type: application/json
+
+{
+    "contact": {
+        "firstName": "Luke",
+        "lastName": "Deer",
+        "email": "deerluke@example.com",
+        "phone": "123-456-7891",
+        "relation": "Friend",
+        "gender": "Male"
+    },
+    "address": {
+        "street1": "123 Main St",
+        "city": "Townville",
+        "state": "Stateville",
+        "country": "US",
+        "zip": "12345"
+  }
+}
+###
+DELETE http://localhost:3000/contact/664004e4319aa27447c18f14 HTTP/1.1
+
+###
+PUT http://localhost:3000/addresses/6640029983b39bf106a38b83 HTTP/1.1
+content-type: application/json
+
+{
+        "street1": "123 Main St",
+        "city": "Cityville",
+        "state": "Stateville",
+        "country": "US",
+        "zip": "12345"
+  }
+
+
+###
+DELETE http://localhost:3000/addresses/6640029983b39bf106a38b83 HTTP/1.1
+
+###
+GET http://localhost:3000/addresses HTTP/1.1

@@ -1,0 +1,443 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "schemes": ["http"],
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Returns Hello World",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contact/": {
+      "get": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Returns all current contacts with their added addresses",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Create a contact with an address",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contact": {
+                  "type": "object",
+                  "properties": {
+                    "firstName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "relation": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street1": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "street2": {
+                      "type": "string",
+                      "example": "optional field"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "country": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "zip": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contact/{id}": {
+      "get": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Returns a contact by it's ID",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Updates a specific contact and user(if desired)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contact": {
+                  "type": "object",
+                  "properties": {
+                    "firstName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "lastName": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "phone": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "relation": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "gender": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street1": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "street2": {
+                      "type": "string",
+                      "example": "optional field"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "country": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "zip": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Deletes the contact and the address connected",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/contact/gender/{filter}": {
+      "get": {
+        "tags": ["Contacts Endpoint"],
+        "description": "Returns contacts based on specified gender",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/addresses/": {
+      "get": {
+        "tags": ["Addresses Endpoint"],
+        "description": "Returns all addresses",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Addresses Endpoint"],
+        "description": "Creates an address",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street1": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "street2": {
+                      "type": "string",
+                      "example": "optional field"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "country": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "zip": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/addresses/{id}": {
+      "get": {
+        "tags": ["Addresses Endpoint"],
+        "description": "Returns an address by it's ID",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Addresses Endpoint"],
+        "description": "Updates an address by it's ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "street1": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "street2": {
+                      "type": "string",
+                      "example": "optional field"
+                    },
+                    "city": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "state": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "country": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "zip": {
+                      "type": "string",
+                      "example": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Addresses Endpoint"],
+        "description": "Deletes the address by itself",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+}
