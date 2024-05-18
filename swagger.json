@@ -10,7 +10,7 @@
   "paths": {
     "/": {
       "get": {
-        "description": "Returns Hello World",
+        "description": "Confirms if you are logged in or not. Use /login or /logout for your appropriate action.",
         "produces": ["application/json"],
         "responses": {
           "200": {
