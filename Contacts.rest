@@ -14,7 +14,7 @@ GET http://localhost:3000/contact HTTP/1.1
 ##GET Single
 GET https://cse341-crudops.onrender.com/contact/66285c77e05dadece0f8ef61 HTTP/1.1
 ###
-GET http://localhost:3000/contact/66285c77e05dadece0f8ef61 HTTP/1.1
+GET http://localhost:3000/contact/66401c53e46a8b887d9ef82f HTTP/1.1
 ###
 
 ##GET filter
